@@ -1,0 +1,36 @@
+# === Angular frontend ===
+file-ai-chat/node_modules/
+file-ai-chat/dist/
+file-ai-chat/out-tsc/
+file-ai-chat/.angular/
+
+# IDE settings
+file-ai-chat/.vscode/
+file-ai-chat/.idea/
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular environments
+file-ai-chat/src/environments/environment*.ts
+
+# === Python backend ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+venv/
+.env/
+.envrc
+instance/
+.DS_Store
+
+# Python virtual env inside TranslationTools
+TranslationTools/trans_venv/
+

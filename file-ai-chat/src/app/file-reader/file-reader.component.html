@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div *ngIf="showModal" class="modal-backdrop">
+  <div class="custom-modal">
+    <div class="modal-message">
+      <span style="font-size:2rem; margin-inline-end:7px;">📤</span>
+      File uploaded successfully!<br>
+      <span style="font-size:1.19rem;">You can now ask a question.</span>
+    </div>
+    <button class="modal-btn" (click)="onModalOk()">OK</button>
+  </div>
+</div>
+
+<h1 class="main-title">Docuchat-AI</h1>
+
+<div class="file-reader-card">
+  <h2 class="card-title">Upload a PDF or Image</h2>
+
+  <div class="centered-row">
+    <input type="file" (change)="onFileSelected($event)" />
+  </div>
+  <div class="centered-row">
+    <button (click)="onUpload()" [disabled]="!selectedFile" class="blue-btn">Upload</button>
+  </div>
+
+  <h3 class="question-title">Ask a question about the file:</h3>
+  <div class="centered-row">
+    <input
+      type="text"
+      class="question-input"
+      [(ngModel)]="question"
+      [disabled]="!uploadedText"
+      placeholder="Type your question here" />
+  </div>
+  <div class="centered-row">
+    <button (click)="onAsk()" [disabled]="!question || !uploadedText" class="blue-btn">Ask</button>
+  </div>
+
+  <div *ngIf="response" class="answer-box">
+    <span class="answer-label">Answer:</span>
+    <div class="answer-text">
+      {{ stripMarkdown(response) }}
+    </div>
+  </div>
+</div>
